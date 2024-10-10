@@ -16,9 +16,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wkC-3f-5sI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wkC-3f-5sI">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tablita" textLabel="JIm-cU-gXa" detailTextLabel="TMa-k6-aD4" style="IBUITableViewCellStyleSubtitle" id="u3G-zl-n6f">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3G-zl-n6f" id="iW7-hs-2j1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JIm-cU-gXa">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TMa-k6-aD4">
+                                                    <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,14 +125,30 @@
                                     <action selector="agregarTapped:" destination="nBo-37-YRc" eventType="touchUpInside" id="NxG-A5-EKk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSo-SQ-8BY">
+                                <rect key="frame" x="165.5" y="436" width="83" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-gf-4ud">
+                                <rect key="frame" x="23" y="495" width="368" height="31"/>
+                                <connections>
+                                    <action selector="controlVolumenCambiado:" destination="nBo-37-YRc" eventType="valueChanged" id="ICM-G6-Xxm"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pNe-rO-9Xf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d6d-FJ-I9Q" firstAttribute="leading" secondItem="pNe-rO-9Xf" secondAttribute="leading" constant="20" id="6yz-WP-dJl"/>
+                            <constraint firstItem="pNe-rO-9Xf" firstAttribute="trailing" secondItem="B0j-gf-4ud" secondAttribute="trailing" constant="25" id="DtW-O5-hrG"/>
+                            <constraint firstItem="XSo-SQ-8BY" firstAttribute="centerX" secondItem="iuS-Ob-dfI" secondAttribute="centerX" id="Hv2-KJ-FSi"/>
                             <constraint firstItem="VsG-cP-a4v" firstAttribute="leading" secondItem="pNe-rO-9Xf" secondAttribute="leading" constant="20" id="Hxh-Fb-OvH"/>
                             <constraint firstItem="pNe-rO-9Xf" firstAttribute="trailing" secondItem="d6d-FJ-I9Q" secondAttribute="trailing" constant="20" id="LtY-Hr-udO"/>
+                            <constraint firstItem="B0j-gf-4ud" firstAttribute="leading" secondItem="pNe-rO-9Xf" secondAttribute="leading" constant="25" id="Ntc-wQ-tTJ"/>
                             <constraint firstItem="zgp-yS-HMw" firstAttribute="centerX" secondItem="iuS-Ob-dfI" secondAttribute="centerX" id="Oae-JJ-5tJ"/>
+                            <constraint firstItem="XSo-SQ-8BY" firstAttribute="top" secondItem="oVO-Dg-cbD" secondAttribute="bottom" constant="32.5" id="PCE-16-69Y"/>
                             <constraint firstItem="F6R-CB-qL6" firstAttribute="centerX" secondItem="iuS-Ob-dfI" secondAttribute="centerX" id="PUx-XA-G1B"/>
                             <constraint firstItem="d6d-FJ-I9Q" firstAttribute="top" secondItem="zgp-yS-HMw" secondAttribute="bottom" constant="20" id="SYP-OD-gjL"/>
                             <constraint firstItem="oVO-Dg-cbD" firstAttribute="centerX" secondItem="iuS-Ob-dfI" secondAttribute="centerX" id="UQZ-J8-1O9"/>
@@ -114,12 +156,15 @@
                             <constraint firstItem="pNe-rO-9Xf" firstAttribute="trailing" secondItem="VsG-cP-a4v" secondAttribute="trailing" constant="20" id="eRU-EA-D8R"/>
                             <constraint firstItem="zgp-yS-HMw" firstAttribute="top" secondItem="F6R-CB-qL6" secondAttribute="bottom" constant="20" id="kmY-Z8-Qbd"/>
                             <constraint firstItem="F6R-CB-qL6" firstAttribute="top" secondItem="pNe-rO-9Xf" secondAttribute="top" constant="20" id="nIh-vM-cGb"/>
+                            <constraint firstItem="B0j-gf-4ud" firstAttribute="top" secondItem="XSo-SQ-8BY" secondAttribute="bottom" constant="35" id="oos-aQ-Wpm"/>
                             <constraint firstItem="VsG-cP-a4v" firstAttribute="top" secondItem="d6d-FJ-I9Q" secondAttribute="bottom" constant="20" id="y6j-ic-VZK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T3M-3v-X5Y"/>
                     <connections>
+                        <outlet property="Tirmpolbl" destination="XSo-SQ-8BY" id="CK3-eI-yN3"/>
                         <outlet property="agregarButton" destination="oVO-Dg-cbD" id="5xk-0d-uAO"/>
+                        <outlet property="controlSonido" destination="B0j-gf-4ud" id="CCt-z8-mWB"/>
                         <outlet property="grabarButton" destination="F6R-CB-qL6" id="cZA-nM-0Pw"/>
                         <outlet property="nombretxt" destination="VsG-cP-a4v" id="xra-6E-UET"/>
                         <outlet property="reproducirButton" destination="zgp-yS-HMw" id="e1g-Vu-E9I"/>
